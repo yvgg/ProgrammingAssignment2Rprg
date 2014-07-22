@@ -25,6 +25,19 @@ of the inverse and get the value of the mean
         setsolve = setsolve,
         getsolve = getsolve)
   } 
+      makeVector <- function(x = numeric()) {
+            m <- NULL
+            set <- function(y) {
+                    x <<- y
+                    m <<- NULL
+            }
+            get <- function() x
+            setmean <- function(mean) m <<- mean
+            getmean <- function() m
+            list(set = set, get = get,
+                 setmean = setmean,
+                 getmean = getmean)
+    }
 
 ## Function cacheSolve
 
